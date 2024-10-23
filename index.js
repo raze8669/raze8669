@@ -1,3 +1,4 @@
+// Créer le menu de navigation dynamiquement
 document.write('<div id="navbar" style="background-color:#333; padding:10px;">');
 document.write('<a href="#about-me" style="color:white; margin-right:20px;">À propos de moi</a>');
 document.write('<a href="#contact-me" style="color:white;">Contactez moi</a>');
@@ -24,3 +25,4 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
