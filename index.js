@@ -1,23 +1,36 @@
-// Créer le menu de navigation dynamiquement
-document.write('<div id="navbar" style="background-color:#333; padding:10px;">');
-document.write('<a href="#about-me" style="color:white; margin-right:20px;">À propos de moi</a>');
-document.write('<a href="#contact-me" style="color:white;">Contactez moi</a>');
-document.write('</div>');
+// Créer le conteneur du menu de navigation
+var navbar = document.createElement('div');
+navbar.id = 'navbar';
+navbar.style.backgroundColor = '#333';
+navbar.style.padding = '10px';
 
-// Ajouter du CSS pour le style du menu
+// Créer les liens du menu
+var linkAbout = document.createElement('a');
+linkAbout.href = '#about-me';
+linkAbout.style.color = 'white';
+linkAbout.style.marginRight = '20px';
+linkAbout.textContent = 'À propos de moi';
+
+var linkContact = document.createElement('a');
+linkContact.href = '#contact-me';
+linkContact.style.color = 'white';
+linkContact.textContent = 'Contactez moi';
+
+// Ajouter les liens au conteneur du menu
+navbar.appendChild(linkAbout);
+navbar.appendChild(linkContact);
+
+// Ajouter le menu au corps de la page (body)
+document.body.prepend(navbar);
+
+// Ajouter du CSS pour les liens du menu
 var style = document.createElement('style');
 style.innerHTML = `
-  #navbar {
-    background-color: #333;
-    overflow: hidden;
-  }
   #navbar a {
-    float: left;
-    display: block;
-    color: white;
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    display: inline-block;
   }
   #navbar a:hover {
     background-color: #ddd;
@@ -25,4 +38,5 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
 
